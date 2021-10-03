@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BMI</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>BMI CALCULATOR</h2>
+        <div class="row">
+            <div class="r1">
+                <label for="">
+                    Enter the weight in Kg:
+                    <input type="text" placeholder="weight" required id="w">
+                </label>
+            </div>
+            <div class="r2">
+                <label for="">
+                    Enter the height in Meters:
+                    <input type="text" placeholder="height " required id="h">
+                </label>
+            </div>
+            <button type="submit" id="submit" onclick="calculate();">Calculate</button>
+            <h4 class="text">YOUR BMI IS :<b id="total"></b></h4>
+            
+        </div>
+    </div>
+    <script>
+        function calculate() {
+            var weight = parseFloat(document.getElementById("w").value);
+            var height = parseFloat(document.getElementById("h").value);
+            var BMI = weight / (height * height);
+            var ubmi = document.getElementById("total");
+             var bmi=ubmi.textContent = BMI.toFixed(2);
+            if (BMI < 18.5) {
+                alert("Underweight-Eat at least three meals per day and try to add in energy-dense snacks whenever possible.")
+            }
+            else if (BMI >= 18.5 && BMI < 25) {
+                alert("Normal-Limit portion size to control calorie intake,add healthy snacks during the day if you want to gain weight.")
+            }
+            else if (BMI >= 25 && BMI < 30) {
+                alert("OverWeight-obesity include losing weight through healthy eating, being more physically active, and making other changes to your usual habits.")
+            }
+            else if (BMI > 30) {
+                alert("Obesity-Focus on eating low–glycemic index food")
+            }
+            else{
+                alert("Please enter valid inputs")
+            }
+        }
+    </script>
+</body>
+
+</html>
